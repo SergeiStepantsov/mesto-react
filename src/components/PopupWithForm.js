@@ -1,16 +1,16 @@
 import closeIcon from '../images/cross.svg';
 
-function PopupWithForm(props) {
+function PopupWithForm({isOpen, onClose, name, title, buttonText, children}) {
   return(
-    <div className={`popup popup_type_${props.name}`+ (props.isOpen && " popup_opened")}> 
+    <div className={`popup popup_type_${name}`+ (isOpen && " popup_opened")}> 
       <div className="popup__conteiner">
-        <button className="popup__close" type="button" onClick={props.onClose}>
-          <img className="popup__close-cross" src={closeIcon} alt="" />
+        <button className="popup__close" type="button" onClick={onClose}>
+          <img className="popup__close-cross" src={closeIcon} alt="Кнопка закрытия окна" />
         </button>
-        <form className="form" name="{props.name}">
-          <h2 className="form__title">{props.title}</h2>
-          {props.children}
-          <button className="form__save" type="submit">Сохранить</button>
+        <form className="form" name={name}>
+          <h2 className="form__title">{title}</h2>
+          {children}
+          <button className="form__save" type="submit">{buttonText}</button>
         </form>
       </div>
     </div>
