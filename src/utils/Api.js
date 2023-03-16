@@ -12,6 +12,7 @@ class Api {
             return Promise.reject(`Ошибка: ${res.status}`);            
     }
 
+    
     async getUserInfo() {
         const res = await fetch(`${this._baseUrl}/users/me`, {
             method: 'GET',
