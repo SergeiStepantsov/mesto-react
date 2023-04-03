@@ -1,5 +1,3 @@
-
-import '../index.css';
 import Header from './Header';
 import Footer from './Footer';
 import Main from './Main';
@@ -21,19 +19,17 @@ function App() {
   const[cards, setCards] = useState([]);
 
   useEffect(() =>{
-    api.getUserInfo()
-       .then((name, about, avatar) => {
-         setCurrentUser(name, about, avatar)
-       })
-       .catch((err) => console.log(err))
-  }, []);
-
-  useEffect(() =>{
     api.getInitialCards()
-       .then((data) =>{
+      .then((data) =>{
          setCards(data);
        }) 
-       .catch((err) => console.log(err))
+      .catch((err) => console.log(err));
+        
+    api.getUserInfo()
+      .then((name, about, avatar) => {
+         setCurrentUser(name, about, avatar)
+      })
+      .catch((err) => console.log(err))
   }, []);
 
   function handleEditAvatarClick() {
