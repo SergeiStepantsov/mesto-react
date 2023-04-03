@@ -87,6 +87,13 @@ class Api {
         });
         return this._checkResponse(res);
     }
+    async changeLikeCardStatus(cardId, isLiked) {
+      const res = await fetch(`${this._baseUrl}/cards/${cardId}/likes`, {
+          method: isLiked ? 'DELETE' : 'PUT',
+          headers: this._headers
+      });
+      return this._checkResponse(res);
+  }
 }
 
 const api = new Api({
