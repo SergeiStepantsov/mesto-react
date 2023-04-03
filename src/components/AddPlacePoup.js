@@ -35,9 +35,12 @@ function AddPlacePopup({isOpen, onClose, onAddPlace}) {
         buttonText="Сохранить"
         onSubmit={handleSubmit}
     >
-        <input className="form__input form__input_field_place" id="card-name" placeholder="Название" type="text" name="name" minLength="2" maxLength="30" required onChange={handleSetCardName} value={cardName} />
+        <input className="form__input form__input_field_place" id="card-name" placeholder="Название" 
+        type="text" name="name" minLength="2" maxLength="30" required onChange={handleSetCardName} 
+        value={cardName} />
             <span className="form__input-error" id="card-name-error"></span>
-        <input className="form__input form__input_field_link" id="card-link" placeholder="Ссылка на картинку" type="url" name="link" required onChange={handleSetCardLink} value={cardLink} />
+        <input className="form__input form__input_field_link" id="card-link" placeholder="Ссылка на картинку" 
+        type="url" name="link" required onChange={handleSetCardLink} value={cardLink} />
             <span className="form__input-error" id="card-link-error"></span>
     </PopupWithForm> 
   )
