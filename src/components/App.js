@@ -4,7 +4,6 @@ import Header from './Header';
 import Footer from './Footer';
 import Main from './Main';
 import ImagePopup from './ImagePopup';
-import PopupWithForm from './PopupWithForm';
 import CurrentUserContext from '../contexts/CurrentUserContext';
 import api from '../utils/Api';
 import { useEffect, useState } from 'react';
@@ -120,8 +119,6 @@ function App() {
       onCardLike={handleCardLike}
       onCardDelete={handleCardDelete}
       cards={cards}
-      
-
       />
       <Footer/>
 
@@ -139,12 +136,6 @@ function App() {
         >
       </AddPlacePopup>
        
-      <PopupWithForm 
-        name="delete-card"
-        title="Вы уверены?"
-        buttonText="Да">
-      </PopupWithForm> 
-      
       <EditAvatarPopup
           isOpen={isEditAvatarPopupOpen}
           onClose={closeAllPopups}
